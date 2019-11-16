@@ -1,0 +1,21 @@
+{
+	"name": "zaf",
+	"version": "0.0.01",
+	"description": "",
+	"main": "gulpfile.js",
+	"author": "Onur Özcanli; Emily Klemt",
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-eslint": "^5.0.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"browser-sync": "^2.26.7",
+		"del": "^5.1.0",
+		"eslint": "^6.1.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-connect-php": "^1.0.3",
+		"gulp-cssbeautify": "^2.0.0",
+		"gulp-rename": "^1.4.0",
+		"gulp-sass": "^4.0.1"
+	}
+}
