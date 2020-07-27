@@ -1,6 +1,6 @@
 /**
  * ANIMATE
- * @param options
+ * @param {object} options
  */
 const ANIMATE =  function(options) {
     let container = options.container,

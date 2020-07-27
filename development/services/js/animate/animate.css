@@ -1,0 +1,176 @@
+/*
+* CSS classes need to run animate.js
+*/
+
+
+/************ classes ************/
+
+/* general */
+.animation-ontop {
+  z-index: 999;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+
+/* move from / to  */
+
+.animation-moveFromRight {
+  -webkit-animation: moveFromRight 0.6s ease both;
+  animation: moveFromRight 0.6s ease both;
+}
+.animation-moveFromLeft {
+  -webkit-animation: moveFromLeft 0.6s ease both;
+  animation: moveFromLeft 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+.animation-moveToRight {
+  -webkit-animation: moveToRight 0.6s ease both;
+  animation: moveToRight 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+.animation-moveToLeft {
+  -webkit-animation: moveToLeft 0.6s ease both;
+  animation: moveToLeft 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+.animation-moveToTop {
+  -webkit-animation: moveToTop 0.6s ease both;
+  animation: moveToTop 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+.animation-moveToBottom {
+  -webkit-animation: moveToBottom 0.6s ease both;
+  animation: moveToBottom 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+.animation-moveFromTop {
+  -webkit-animation: moveFromTop 0.6s ease both;
+  animation: moveFromTop 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+.animation-moveFromBottom {
+  -webkit-animation: moveFromBottom 0.6s ease both;
+  animation: moveFromBottom 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+/* scale and fade */
+
+.animation-scaleDown {
+  -webkit-animation: scaleDown 0.6s ease both;
+  animation: scaleDown 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+.animation-scaleUp {
+  -webkit-animation: scaleUp 0.6s ease both;
+  animation: scaleUp 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+.animation-fadeIn {
+  -webkit-animation: fadeIn 0.6s ease both;
+  animation: fadeIn 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+.animation-fadeOut {
+  -webkit-animation: fadeOut 0.6s ease both;
+  animation: fadeOut 0.6s ease both;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+
+
+/************ keyframes ************/
+
+/* move from / to  */
+
+@-webkit-keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+@-webkit-keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+@-webkit-keyframes moveFromTop {
+  from { -webkit-transform: translateY(-100%); }
+}
+@keyframes moveFromTop {
+  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+@-webkit-keyframes moveFromBottom {
+  from { -webkit-transform: translateY(100%); }
+}
+@keyframes moveFromBottom {
+  from { -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+
+@-webkit-keyframes moveToLeft {
+  from { }
+  to { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveToLeft {
+  from { }
+  to { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+@-webkit-keyframes moveToTop {
+  from { }
+  to { -webkit-transform: translateY(-100%); }
+}
+@keyframes moveToTop {
+  from { }
+  to { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+@-webkit-keyframes moveToBottom {
+  from { }
+  to { -webkit-transform: translateY(100%); }
+}
+@keyframes moveToBottom {
+  from { }
+  to { -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+@-webkit-keyframes moveToRight {
+  from { }
+  to { -webkit-transform: translateX(100%); }
+}
+@keyframes moveToRight {
+  from { }
+  to { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+/* scale and fade */
+
+@keyframes scaleDown {
+  to { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}

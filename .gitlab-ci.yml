@@ -1,0 +1,62 @@
+# image dotsunited/git-ftp already includes git-ftp, is started up with docker
+image: dotsunited/git-ftp
+
+# variables passed through from GitLab project settings
+variables:
+  # variables for dev
+  DEV_URL: $DEV_ENV_URL
+  DEV_HOST: $FTP_DEV_HOST
+  DEV_USER: $FTP_DEV_USER
+  DEV_PASS: $FTP_DEV_PASSWORD
+  # variables for stage
+  STAGE_URL: $STAGE_ENV_URL
+  STAGE_HOST: $FTP_STAGE_HOST
+  STAGE_USER: $FTP_STAGE_USER
+  STAGE_PASS: $FTP_STAGE_PASSWORD
+
+# specify the stages
+stages:
+  - dev
+  - stage
+
+# deploy pipeline for www-dev
+deploy-dev:
+  # define which stage is used
+  stage: dev
+  # environment description
+  environment:
+    name: development
+    url: $DEV_URL
+  # GitLab Runner with given tag is used
+  tags:
+    - main-runner
+  # only for specific branch
+  only:
+    - dev
+  # only trigerred manually
+  when: manual
+  # script triggered when container launches
+  script:
+    - git-ftp --version
+    - git-ftp push --auto-init -v --syncroot deployment/ -u $DEV_USER -p $DEV_PASS $DEV_HOST
+
+# deploy pipeline for stage-dev
+deploy-stage:
+  # define which stage is used
+  stage: stage
+  # environment description
+  environment:
+    name: stage
+    url: $STAGE_URL
+  # GitLab Runner with given tag is used
+  tags:
+    - main-runner
+  # only for specific branch
+  only:
+    - master
+  # only trigerred manually
+  when: manual
+  # script triggered when container launches
+  script:
+    - git-ftp --version
+    - git-ftp push --auto-init -v --syncroot deployment/ -u $STAGE_USER -p $STAGE_PASS $STAGE_HOST
